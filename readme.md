@@ -10,6 +10,7 @@ Ensure you have Python installed, then install the required dependencies:
 
 ```bash
 pip install ultralytics pymongo opencv-python numpy
+```
 
 ### 2. Set Up MongoDB  
 
@@ -22,4 +23,5 @@ Run the script:
 
 ```bash
 python state360.py
+```
 
