@@ -4,8 +4,6 @@ import concurrent.futures
 from pymongo import MongoClient
 from datetime import datetime
 from ultralytics import YOLO
-from whatsapp_alert_function import whatsapp
-from sms_alert_function import sms
 
 # MongoDB Configuration
 MONGO_URI = "mongodb+srv://mrimmortaldrive:<db_password>@cluster0.kw1su.mongodb.net/"
@@ -61,10 +59,6 @@ def video_detection(video_path, camera_id):
                         }
                         collection.insert_one(log_data)
                         last_logged_time = current_time
-
-                    with concurrent.futures.ThreadPoolExecutor() as executor:
-                        executor.submit(whatsapp)
-                        executor.submit(sms)
 
         cv2.imshow(f"Camera {camera_id} - Weapon Detection", img)
         if cv2.waitKey(1) & 0xFF == ord('q'):
