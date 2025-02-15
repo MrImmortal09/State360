@@ -6,7 +6,7 @@ from datetime import datetime
 from ultralytics import YOLO
 
 # MongoDB Configuration
-MONGO_URI = "mongodb+srv://mrimmortaldrive:<db_password>@cluster0.kw1su.mongodb.net/"
+MONGO_URI = "mongodb+srv://mrimmortaldrive:omswami2004@cluster0.kw1su.mongodb.net/"
 client = MongoClient(MONGO_URI)
 db = client['WeaponDetection']
 collection = db['logs']
